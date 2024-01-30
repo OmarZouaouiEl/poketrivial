@@ -180,7 +180,7 @@ enum class Questions(val question: TriviaQuestion) {
     QUESTION_18(
         TriviaQuestion(
             "What was team rocket's objective?",
-            R.drawable.question16,
+            R.drawable.question18,
             listOf("Dominate the world", "Catch Pikachu", "Train Ash", "Win Contests"),
             "Dominate the world",
             Difficulty.MEDIUM
@@ -189,7 +189,7 @@ enum class Questions(val question: TriviaQuestion) {
     QUESTION_19(
         TriviaQuestion(
             "How many episodes does the pokemon anime have?",
-            R.drawable.question16,
+            R.drawable.question19,
             listOf("128", "65", "962", "1270"),
             "1270",
             Difficulty.MEDIUM
@@ -198,7 +198,7 @@ enum class Questions(val question: TriviaQuestion) {
     QUESTION_20(
         TriviaQuestion(
             "Who is The actual world champion (goat) of pokemon?",
-            R.drawable.question16,
+            R.drawable.question20,
             listOf("Wolfey Glick", "Sea Jun Park", "Red", "Ash Ketchum"),
             "Ash Ketchum",
             Difficulty.MEDIUM

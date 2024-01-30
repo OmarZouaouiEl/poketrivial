@@ -1,3 +1,5 @@
+
+// GameScreen
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -6,7 +8,6 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.Color
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -24,7 +25,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.poketrivia.Routes
-import com.example.poketrivia.Questions
 
 @Composable
 fun GameScreen(navController: NavController, questions: List<TriviaQuestion>) {
@@ -42,8 +42,11 @@ fun GameScreen(navController: NavController, questions: List<TriviaQuestion>) {
             }
         )
     } else {
-        // All questions answered, navigate to the result screen
-        navController.navigate("${Routes.ResultScreen.route}/$userScore")
+        ResultScreen(navController = navController, userScore = userScore) {
+            // Handle playing again, reset the state or navigate back to the menu
+            currentQuestionIndex = 0
+            navController.navigate(Routes.MenuScreen.route)
+        }
     }
 }
 

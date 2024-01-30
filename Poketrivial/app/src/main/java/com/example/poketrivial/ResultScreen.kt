@@ -3,7 +3,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
-
+import androidx.compose.material3.Color
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -17,9 +17,8 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.poketrivia.Routes
 
-
 @Composable
-fun ResultScreen(navController: NavController, userScore: Int) {
+fun ResultScreen(navController: NavController, userScore: Int, onPlayAgain: () -> Unit) {
     Box(
         modifier = Modifier.fillMaxSize().background(Color.Gray),
         contentAlignment = Alignment.Center
@@ -51,10 +50,8 @@ fun ResultScreen(navController: NavController, userScore: Int) {
 
             Button(
                 onClick = {
-                    // Reset the game state and navigate back to the menu screen
-                    currentQuestionIndex = 0
-                    userScore = 0
-                    navController.navigate(Routes.MenuScreen.route)
+                    // Call the provided callback to play again
+                    onPlayAgain()
                 },
                 colors = ButtonDefaults.buttonColors(
                     containerColor = Color.Blue,
